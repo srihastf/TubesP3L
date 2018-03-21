@@ -25,7 +25,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/home';    //jadi gini eaaks mas ini cuman coba coba buat merge se line yang sama
 
     /**
      * Create a new controller instance.
