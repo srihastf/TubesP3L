@@ -4,9 +4,19 @@ namespace App\Http\Controllers;
 
 use App\KeluhanModel;
 use Illuminate\Http\Request;
+use App\CustomerModel;
 
 class KeluhanController extends Controller
 {
+        /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -34,18 +44,19 @@ class KeluhanController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request,$id)
     {
+        $data['data']=CustomerModel::where($id);
         KeluhanModel::create([
-            'Id_Keluhan' => $request->id_keluhan,
+            'Id_Keluhan' => null,
             'Detail_Keluhan' => $request->detail_keluhan,
-            'Id_Customer' =>  $request->id_customer,
-            'Id_WorkOrder' =>  $request->id_workorder,
+            'Id_Customer' =>  $request->id_customer, //
+            'Id_WorkOrder' =>  null,
         ]);
         return redirect()->route('c_keluhan.index');
     }
 
-    /**
+        /**
      * Display the specified resource.
      *
      * @param  int  $id

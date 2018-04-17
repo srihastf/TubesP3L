@@ -19,7 +19,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <a href="{{ route('c_keluhan.create') }}"><button type="button">Tambah Keluhan</button></a>
+                    <a href="{{ route('c_keluhan.create', [Auth::user()->name]) }}"><button type="button">Tambah Keluhan</button></a>
                 </div>
                 <div class="card-body">
                     <table class="table">
