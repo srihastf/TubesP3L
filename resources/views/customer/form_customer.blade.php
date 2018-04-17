@@ -11,10 +11,10 @@
                     <form method="POST" action="{{route('c_customer.store')}}"> 
                             @csrf
 
-                            <div class="form-group row">
+                            <div class="form-group row"hidden>
                                 <label for="id_customer" class="col-sm-4 col-form-label text-md-right">{{ __('Id Customer') }}</label>
                                 <div class="col-md-6">
-                                    <input id="id_customer" type="text" class="form-control{{ $errors->has('id_customer') ? ' is-invalid' : '' }}" name="id_customer" value="{{ old('id_customer') }}" required autofocus>
+                                    <input id="id_customer" type="text" class="form-control{{ $errors->has('id_customer') ? ' is-invalid' : '' }}" name="id_customer" value="{{ old('id_customer') }}"  autofocus>
                                 </div>
                             </div>
 

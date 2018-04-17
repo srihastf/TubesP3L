@@ -46,7 +46,7 @@ class CustomerController extends Controller
     public function store(Request $request)
     {
         CustomerModel::create([
-            'Id_Customer' => $request->id_customer,
+            'Id_Customer' => null,
             'Nama_Customer' => $request->nama_customer,
             'Alamat' => $request->alamat,
             'Status' => 'customer',
