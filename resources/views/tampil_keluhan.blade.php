@@ -10,7 +10,7 @@
                     @if(Auth::user()->status=='customer')
                         <a href="{{URL('home')}}">Dashboard</a> <span> | </span>
                         <a href="{{URL('c_keluhan')}}">Keluhan</a> <span> | </span>
-                        <a href='#'>Profil</a> <span> | </span>
+                        <a href="{{ route('c_customer.show', [Auth::user()->name]) }}">Profil</a> <span> | </span>
                     @endif
                 </div>
                 <div class="card-body">
@@ -19,7 +19,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <a href="{{ route('c_keluhan.create', [Auth::user()->name]) }}"><button type="button">Tambah Keluhan</button></a>
+                    <a href="{{ route('c_keluhan.create', [Auth::user()->charID]) }}"><button type="button">Tambah Keluhan</button></a>
                 </div>
                 <div class="card-body">
                     <table class="table">

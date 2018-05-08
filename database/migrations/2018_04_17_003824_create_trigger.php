@@ -13,17 +13,28 @@ class CreateTrigger extends Migration
      */
     public function up()
     {
-        DB::unprepared("CREATE TRIGGER `tr_kode_customer` BEFORE INSERT ON `customer`
+        DB::unprepared("CREATE TRIGGER `tr_kode_customer` BEFORE INSERT ON `users`
         FOR EACH ROW begin
+       if new.charID is null then
+       set new.charID := (
+       select concat('CST',
+       lpad(ifnull(cast(max(right(charID, 3)) as unsigned integer),0) +1,4,'0')
+        ) from users
+       );
+       end if;
+       end");
+
+       DB::unprepared("CREATE TRIGGER `tr_kode_customer2` BEFORE INSERT ON `customer`
+       FOR EACH ROW begin
        if new.Id_Customer is null then
        set new.Id_Customer := (
-       select concat('CST',
-       lpad(ifnull(cast(max(right(Id_Customer, 3)) as unsigned integer),0) +1,4,'0')
-        ) from customer
+       select charID from users where users.name = new.Nama_Customer
        );
        end if;
        end");
     }
+
+
 
     /**
      * Reverse the migrations.
@@ -33,5 +44,6 @@ class CreateTrigger extends Migration
     public function down()
     {
         DB::unprepared('DROP TRIGGER `tr_kode_customer`');
+        DB::unprepared('DROP TRIGGER `tr_kode_customer2`');
     }
 }

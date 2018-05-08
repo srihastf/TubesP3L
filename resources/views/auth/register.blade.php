@@ -89,6 +89,20 @@
                                 @endif
                             </div>
                         </div>
+                        <div class="form-group row" hidden>
+                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('CharID') }} (*soon hidden)</label>
+
+                            <div class="col-md-6">
+                                <input id="charID" type="text" class="form-control{{ $errors->has('charID') ? ' is-invalid' : '' }}" name="charID" value=NULL>
+
+                                @if ($errors->has('charID'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('charID') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
                         <!-- // -->
 
                         <div class="form-group row mb-0">
