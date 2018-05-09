@@ -60,11 +60,12 @@ class CustomerController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
+     * @param  \App\CustomerModel  $CustomerModel
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        $data['data']=CustomerModel::where($id);
+        $data['data']=CustomerModel::find($id);
         return view('customer\profil_customer',$data); //
     }
 

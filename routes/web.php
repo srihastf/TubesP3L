@@ -19,5 +19,5 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('c_customer', 'CustomerController');
-Route::resource('c_keluhan','KeluhanController');
+Route::resource('c_keluhan', 'KeluhanController');
 

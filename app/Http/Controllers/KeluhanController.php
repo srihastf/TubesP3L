@@ -30,12 +30,14 @@ class KeluhanController extends Controller
 
     /**
      * Show the form for creating a new resource.
-     *
+     * @param  int  $id
+     * @param  \App\CustomerModel  $CustomerModel
      * @return \Illuminate\Http\Response
      */
     public function create()
     {
-        return view('form_keluhan');
+      
+        return view('form_keluhan'); //
     }
 
     /**

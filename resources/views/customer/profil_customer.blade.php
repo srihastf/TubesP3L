@@ -12,13 +12,15 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    Hello {{Auth::user()->name}} <br/>
+                    
+                    Hello {{$data->Nama_Customer}} <br/>
                     Email Anda : {{Auth::user()->email}} <br/>
                     Username Anda : {{Auth::user()->username}} <br/>
+                    Alamat : {{$data->Alamat}}<br/>
                     @if(Auth::user()->status=='customer')
                         Anda sebagai customer
                     @endif
+                    
                 </div>
             </div>
         </div>

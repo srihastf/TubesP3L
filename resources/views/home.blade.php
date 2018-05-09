@@ -10,7 +10,7 @@
                     @if(Auth::user()->status=='customer')
                         <a href="{{URL('home')}}">Dashboard</a> <span> | </span>
                         <a href="{{URL('c_keluhan')}}">Keluhan</a> <span> | </span>
-                        <a href="{{ route('c_customer.show', [Auth::user()->name]) }}">Profil</a> <span> | </span>
+                        <a href="{{ route('c_customer.show', [Auth::user()->charID]) }}">Profil</a> <span> | </span>
                     @endif
                 </div>
                 <div class="card-body">
