@@ -11,7 +11,7 @@
         "laravel/tinker": "^1.0"
     },
     "require-dev": {
-        "codeception/codeception": "^2.4",
+        
         "filp/whoops": "^2.0",
         "fzaninotto/faker": "^1.4",
         "laravel/dusk": "^3.0",
@@ -59,4 +59,5 @@
     },
     "minimum-stability": "dev",
     "prefer-stable": true
+   
 }
