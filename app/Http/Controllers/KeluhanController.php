@@ -36,7 +36,7 @@ class KeluhanController extends Controller
      */
     public function create()
     {
-      
+        //$data['data']=$request->session()->get('charID');
         return view('form_keluhan'); //
     }
 
@@ -46,14 +46,13 @@ class KeluhanController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request,$id)
+    public function store(Request $request)
     {
-        $data['data']=CustomerModel::where($id);
         KeluhanModel::create([
-            'Id_Keluhan' => null,
+            'Id_Keluhan' => $request->id_keluhan,
             'Detail_Keluhan' => $request->detail_keluhan,
             'Id_Customer' =>  $request->id_customer, //
-            'Id_WorkOrder' =>  null,
+            'Id_WorkOrder' =>  "WRD0001",
         ]);
         return redirect()->route('c_keluhan.index');
     }
