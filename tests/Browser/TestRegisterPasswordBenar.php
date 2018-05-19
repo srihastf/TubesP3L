@@ -13,6 +13,8 @@ class TestRegisterPasswordBenar extends DuskTestCase
      *
      * @return void
      */
+    public function testIsiPasswordBenar()
+    {
         $this->browse(function (Browser $browser) {
             
             $browser->visit('/register')
@@ -25,4 +27,5 @@ class TestRegisterPasswordBenar extends DuskTestCase
                     ->assertPathIs('/c_customer/create');
                  });                                                     
     }
+}
 

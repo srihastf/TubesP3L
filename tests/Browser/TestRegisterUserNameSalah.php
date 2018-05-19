@@ -13,6 +13,8 @@ class TestRegisterUserNameSalah extends DuskTestCase
      *
      * @return void
      */
+    public function testIsiUserNameSalah()
+    {
         $this->browse(function (Browser $browser) {
             
             $browser->visit('/register')
@@ -24,5 +26,5 @@ class TestRegisterUserNameSalah extends DuskTestCase
                     ->press('Register')
                     ->assertPathIs('/c_customer/create');
                  });                                                     
-    
+                }
 }
