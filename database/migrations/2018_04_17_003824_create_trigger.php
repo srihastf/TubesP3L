@@ -56,6 +56,6 @@ class CreateTrigger extends Migration
     {
        // DB::unprepared('DROP TRIGGER `tr_kode_customer`');
         DB::unprepared('DROP TRIGGER `tr_kode_customer2`');
-        DB::unprepared('DROP TRIGGER `tr_kode_keluhan`');
+        //DB::unprepared('DROP TRIGGER `tr_kode_keluhan`');
     }
 }
