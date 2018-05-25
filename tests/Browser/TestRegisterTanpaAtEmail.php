@@ -19,11 +19,11 @@ public function testIsiEmailTanpaAt()
         $this->browse(function (Browser $browser) {
             
             $browser->visit('/register')
-                    ->type('name', 'fikri13921')
-                    ->type('username', 'fikri13921')
-                    ->type('email', 'fikri13921gmail.com')
-                    ->type('password', 'fikri2921')
-                    ->type('password_confirmation', 'fikri2921')
+                    ->type('name', 'mitaamara')
+                    ->type('username', 'mitaamara')
+                    ->type('email', 'mitaamaragmail.com')
+                    ->type('password', 'mita123')
+                    ->type('password_confirmation', 'mita123')
                     ->press('Register')
                     ->assertPathIs('/register');
                  });                                                     

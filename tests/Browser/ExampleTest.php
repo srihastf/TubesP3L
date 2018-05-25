@@ -28,7 +28,7 @@ class ExampleTest extends DuskTestCase
             $browser->visit('/register')
                     ->type('name', 'fikri2921')
                     ->press('Register')
-                    ->assertPathIs('/c_customer/create');;
+                    ->assertPathIs('/register');;
                  });                                                     
     }
         public function testIsiUserName()

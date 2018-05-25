@@ -18,13 +18,13 @@ class TestRegisterUserNameSalah extends DuskTestCase
         $this->browse(function (Browser $browser) {
             
             $browser->visit('/register')
-                    ->type('name', 'fikri12221')
-                    ->type('username', 'fikri13921')
-                    ->type('email', 'fikri13921@gmail.com')
-                    ->type('password', 'fikri2921')
-                    ->type('password_confirmation', 'fikri2921')
+                    ->type('name', 'rizaln')
+                    ->type('username', 'nur')
+                    ->type('email', 'nur@gmail.com')
+                    ->type('password', 'xx123456')
+                    ->type('password_confirmation', 'xx123456')
                     ->press('Register')
-                    ->assertPathIs('/c_customer/create');
+                    ->assertPathIs('/register');
                  });                                                     
                 }
 }
