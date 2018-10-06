@@ -6,7 +6,13 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">Selamat Datang</div>
-
+                <div class="card-header">
+                    @if(Auth::user()->status=='customer')
+                        <a href="{{URL('home')}}">Dashboard</a> <span> | </span>
+                        <a href="{{URL('c_keluhan')}}">Keluhan</a> <span> | </span>
+                        <a href="{{ route('c_customer.show', [Auth::user()->charID]) }}">Profil</a> <span> | </span>
+                    @endif
+                </div>
                 <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success">

@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -28,9 +29,10 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = 'c_customer/create';
     protected $username = 'username';
     protected $status = 'status';
+    protected $charID = 'charID';
 
     /**
      * Create a new controller instance.
@@ -56,7 +58,7 @@ class RegisterController extends Controller
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
             'status'=>'required|string|max:20',
-            
+            'charID'=>'string|max:7',
         ]);
     }
 
@@ -74,7 +76,7 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'status' => $data['status'],
-
+            'charID'=>null,
         ]);
     }
 }
